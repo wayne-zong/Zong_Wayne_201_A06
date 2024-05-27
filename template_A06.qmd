@@ -273,6 +273,15 @@ Example: The number 312 would return 6 (3 + 1 + 2)
 Run your function with 935068.
 
 ```{r}
+add_digits <- function(num){
+  if(num == 0){
+    return(0)
+  } else{
+    remainder = num - as.integer(num/10) * 10
+    return(remainder + add_digits(as.integer(num/10)))
+  }
+}
 
+print(add_digits(312))
 ```
 
